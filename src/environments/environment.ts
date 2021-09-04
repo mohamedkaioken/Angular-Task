@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  sourceURL: 'https://youtube.googleapis.com/youtube/v3',
+  firebaseConfig:{
+    apiKey: "AIzaSyA9GG8qOHif0Cyo7S87DTPEwjC9y-5k9k4",
+    authDomain: "vodafone-f943a.firebaseapp.com",
+    projectId: "youtube-vodafone",
+    storageBucket: "youtube-vodafone.appspot.com",
+    messagingSenderId: "80470007597",
+    appId: "1:80470007597:web:32b771c6dfe0eab6d33da4"
+  }
 };
 
 /*

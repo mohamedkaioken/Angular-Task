@@ -1,0 +1,122 @@
+<img *ngIf="videoDetails" [src]="videoDetails.snippet.thumbnails.maxres.url" style="width: 100%;" [height]="videoDetails.snippet.thumbnails.high.height+100" alt="">
+<br><br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-9 mt-3">
+            <h5 style="font-weight: bold; text-align: left;
+            font: normal normal bold 17px/20px Montserrat;
+            letter-spacing: 0px;
+            color: #3D5161;
+            opacity: 1;">{{videoDetails.snippet.title}}</h5>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col-8">
+                    <button type="button" style="background-color: red; color: white;text-align: left;
+                    font: normal normal bold 17px/20px Montserrat;
+                    letter-spacing: 0px;
+                    opacity: 1;" class="btn btn-lg">Add to Favorites</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" style="background-color: red; color: white;text-align: left;
+                    font: normal normal bold 17px/20px Montserrat;
+                    letter-spacing: 0px;
+                    opacity: 1;" class="btn btn-lg" routerLink="/home">Back</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-5">
+            <div class="row">
+                <div class="col-3 mt-3">
+                    <h6 style="font-weight: bold; text-align: left;
+                    font: normal normal bold 17px/20px Montserrat;
+                    letter-spacing: 0px;
+                    color: #3D5161;
+                    opacity: 1;">
+                        Rate Now
+                    </h6>
+                </div>
+                <div class="col-6">
+                    <ng-rating-bar 
+                    [value]="3"
+                    [ratingCount]="5"
+                    colorActive="red"
+                    colorDefault="gray"
+                  ></ng-rating-bar>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mt-3">
+            <h6 style="text-align: left;
+            font: normal normal bold 17px/20px Montserrat;
+            letter-spacing: 0px;
+            color: #3D5161;
+            opacity: 1;">
+                Duration - {{videoDetails.contentDetails.duration.substr(2)}}
+            </h6>
+        </div>
+        <div class="col-3 mt-3">
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-2">
+                            <span class="material-icons">
+                                visibility
+                                </span>
+                        </div>
+                        <div class="col">
+                            <h6>
+                        
+                                {{videoDetails.statistics.viewCount | number:''}}
+                        </h6>
+                        </div>
+                    </div>
+                   
+
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col-2">
+                            <span class="material-icons">
+                                thumb_up
+                                </span>
+                        </div>
+                        <div class="col">
+                            <h6>
+                        
+                                {{videoDetails.statistics.likeCount | number:''}}
+                        </h6>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="row">
+            <h6 style="text-align: left;
+            font: normal normal bold 17px/20px Montserrat;
+            letter-spacing: 0px;
+            color: red;
+            opacity: 1;">Published on {{getDate(videoDetails.snippet.publishedAt)}}</h6>
+        </div>
+        <br>
+        <br>
+        <p style="text-align: left;
+        font: normal normal bold Montserrat;
+        letter-spacing: 0px;
+        color: #3D5161;
+        opacity: 1;">
+            {{videoDetails.snippet.description}}
+        </p>
+        
+    </div>
+    <br><br>
+</div>

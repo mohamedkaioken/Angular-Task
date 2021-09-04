@@ -1,0 +1,6 @@
+.btn:hover{
+    background-color: red;
+}
+.has-search .form-control {
+    padding-left: 2.375rem;
+}

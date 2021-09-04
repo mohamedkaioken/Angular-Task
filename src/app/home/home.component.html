@@ -1,0 +1,83 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8 ms-5">
+            <img src="../../assets/imgs/logo_Dark-1.png" style="width: 130px; height: 40px;" alt="">
+        </div>
+        <div class="col-3">
+            <div class="input-group form-control flex-nowrap  rounded-pill">
+                <span class="fa fa-search form-control-feedback mt-2" style="color: gainsboro;"></span>
+                <input (keyup)="searchfilter($event)" type="text" style="border: none;" class="form-control rounded-pill" placeholder="Search by Video Title" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="input-group form-control flex-nowrap  rounded-pill">
+                <input (keyup)="getVideosList($event.target.value)" type="text" style="border: none;" class="form-control rounded-pill" placeholder="Search For Videos" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+        </div>
+        
+    </div>
+    <br>
+    <div class="row" style="position: sticky;
+    top: 0;">
+        <div class="col-2">
+
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-1">
+                    <span class="material-icons">
+                        unfold_more
+                        </span> 
+                </div>
+                <div class="col">
+                    <h6 style="font-weight: bold;" class="text-start" *ngIf="sortTitle == null" type="button" (click)="sortArr(videosList,1);sortTitle =0;">
+                        Title 
+                    </h6>
+                    <h6 style="font-weight: bold;" class="text-start" *ngIf="sortTitle != null" type="button" (click)="sortArr(videosList,1);sortTitle =null;">
+                        Title 
+                    </h6>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <div class="col-2">
+                    <span class="material-icons">
+                        unfold_more
+                        </span> 
+                </div>
+                <div class="col">
+                    <h6 style="font-weight: bold;" class="text-start" *ngIf="sortDate == null" type="button" (click)="sortArr(videosList,2);sortDate =0;">
+                        Publish Date  
+                    </h6>
+                    <h6 style="font-weight: bold;" class="text-start" *ngIf="sortDate != null" type="button" (click)="sortArr(videosList,2);sortDate =null;">
+                        Publish Date  
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <hr class="ms-5">
+    </div>
+    
+    <div class="row" style="height: 90px;"  *ngFor="let video of videosList">
+        <div class="col-2  ms-5">
+            <img [src]="video.snippet.thumbnails.high.url" width="150" height="80" alt="">
+        </div>
+        <div class="col-6   mt-3 ms-3">
+            <h6 class="text-start">{{video.snippet.title}}</h6>
+        </div>
+        <div class="col  mt-3 ">
+            <h6 class="text-start">
+                {{getDate(video.snippet.publishedAt)}}
+            </h6>
+        </div>
+        <div class="col mt-3 ">
+            <button type="button" (click)="redirect(video.id.videoId)" class="btn btn-outline-secondary">Details</button>
+        </div>
+        <hr class="ms-5">
+    </div>
+</div>
