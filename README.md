@@ -1,3 +1,25 @@
+# This An Application for Vodafone Task
+
+## Description:
+This task is a frontend task with angular 
+
+
+## Choices:
+I chose to use angular as a technology with bootstrap and angular material and get the YouTube API (YouTube API data v3).
+
+
+## Decisions & Designs:
+I decided to design the home page at 3 phases:
+ One for the logo and search 
+ Second for the video searching  
+ Third for the List of Videos and the Details Button
+And The Detailed Page I pass the id of the video then get its details as it shown in the design pdf 
+
+## To run the application 
+1-	npm install
+2-	ng serve -o
+
+
 # YoutubeTask
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
